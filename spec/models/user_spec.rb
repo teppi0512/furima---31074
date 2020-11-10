@@ -9,27 +9,27 @@ RSpec.describe User, type: :model do
       it "nickname,email,password,password_confirmation,last_name,first_name,last_name_kana,first_name_kana,birthdateが存在すれば登録できる" do
         expect(@user).to be_valid
       end
-      it "passwordが6文字以上で尚且つ半角英数字混合での入力であれば登録できる" do
-        @user.password = "111111a"
-        @user.password_confirmation = "111111a"
-        expect(@user).to be_valid
-      end
-      it "last_nameは全角(漢字、ひらがな、カタカナ)の入力があれば登録できる" do
-        @user.last_name = "麻そウ"
-        expect(@user).to be_valid
-      end
-      it "first_nameは全角(漢字、ひらがな、カタカナ)の入力があれば登録できる" do
-        @user.first_name = "太ろウ"
-        expect(@user).to be_valid
-      end
-      it "last_name_kanaは全角(カタカナ)の入力があれば登録できる" do
-        @user.last_name_kana = "アソウ"
-        expect(@user).to be_valid
-      end
-      it "first_name_kanaは全角(カタカナ)の入力があれば登録できる" do
-        @user.first_name_kana = "タロウ"
-        expect(@user).to be_valid
-      end
+      #it "passwordが6文字以上で尚且つ半角英数字混合での入力であれば登録できる" do
+        #@user.password = "111111a"
+        #@user.password_confirmation = "111111a"
+        #expect(@user).to be_valid
+      #end
+      #it "last_nameは全角(漢字、ひらがな、カタカナ)の入力があれば登録できる" do
+        #@user.last_name = "麻そウ"
+        #expect(@user).to be_valid
+      #end
+      #it "first_nameは全角(漢字、ひらがな、カタカナ)の入力があれば登録できる" do
+        #@user.first_name = "太ろウ"
+        #expect(@user).to be_valid
+      #end
+      #it "last_name_kanaは全角(カタカナ)の入力があれば登録できる" do
+        #@user.last_name_kana = "アソウ"
+        #expect(@user).to be_valid
+      #end
+      #it "first_name_kanaは全角(カタカナ)の入力があれば登録できる" do
+        #@user.first_name_kana = "タロウ"
+        #expect(@user).to be_valid
+      #end
     end
 
     context '新規登録がうまくいかないとき' do
