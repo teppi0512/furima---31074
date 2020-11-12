@@ -13,4 +13,7 @@ class User < ApplicationRecord
     validates :birthdate
     validates :password, format:{ with:/\A[a-zA-Z0-9]+\z/, message: "is invalid. Input full-width characters."}
   end
+
+  has_many :prototypes
+
 end
