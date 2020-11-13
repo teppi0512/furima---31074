@@ -1,0 +1,16 @@
+<%= link_to image_tag(item.image, class: "item-img"), root_path(item.id) %>
+<div class="item_info">
+  <h3 class="item_name">
+    <%= "#{item.name}" %>
+  </h3>
+  <div class="item_price">
+    <%= "#{item.price}" "円" %>
+    <%= "(税込み)" %>
+    <div class='star-btn'>
+      <%= image_tag "star.png", class:"star-icon" %>
+      <span class='star-count'>0</span>
+    </div>
+  </div>
+</div>
+
+
