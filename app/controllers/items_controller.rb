@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :show, :edit, :update]
   before_action :set_item, only: [:show, :edit, :update]
 
 
@@ -24,6 +24,9 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    if @item.user.id != current_user.id
+      redirect_to root_path
+    end 
   end
 
   def update
