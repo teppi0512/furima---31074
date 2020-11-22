@@ -14,6 +14,7 @@ class User < ApplicationRecord
     validates :password, format:{ with:/\A[a-zA-Z0-9]+\z/, message: "is invalid. Input full-width characters."}
   end
 
-  has_many :prototypes
+  has_many :items
+  has_many :purchases
 
 end

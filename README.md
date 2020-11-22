@@ -58,7 +58,7 @@
 | postal_cord             | string         | null: false                    |
 | prefecture_id           | integer        | null: false                    |
 | city                    | string         | null: false                    |
-| adderesses              | string         | null: false                    |
+| addresses               | string         | null: false                    |
 | building                | string         |                                |
 | phone_number            | string         | null: false                    |
 | purchase                | references     | foreign_key :true              |
