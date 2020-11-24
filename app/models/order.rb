@@ -1,7 +1,7 @@
 class Order
 
   include ActiveModel::Model
-  attr_accessor :postal_cord, :prefecture_id, :city, :addresses, :building, :phone_number, :user_id, :item_id, :token
+  attr_accessor :postal_cord, :prefecture_id, :city, :addresses, :building, :phone_number, :user_id, :item_id, :token, :item_id, :user_id
 
   with_options presence: true do
     validates :postal_cord, format: { with: /\A\d{3}[-]\d{4}\z/, message: "is invalid. Include hyphen(-)"}
