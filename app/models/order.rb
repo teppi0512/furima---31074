@@ -1,7 +1,7 @@
 class Order
 
   include ActiveModel::Model
-  attr_accessor :postal_cord, :prefecture_id, :city, :addresses, :building, :phone_number, :user_id, :item_id, :token, :item_id, :user_id
+  attr_accessor :postal_cord, :prefecture_id, :city, :addresses, :building, :phone_number, :user_id, :item_id, :token
 
   with_options presence: true do
     validates :postal_cord, format: { with: /\A\d{3}[-]\d{4}\z/, message: "is invalid. Include hyphen(-)"}
@@ -10,6 +10,8 @@ class Order
     validates :addresses
     validates :phone_number, format: {with: /\A[0-9]+\z/, message: "is invalid. Input full-width characters"}, length: { maximum: 11 }
     validates :token
+    validates :item_id
+    validates :user_id
   end
 
   def save
