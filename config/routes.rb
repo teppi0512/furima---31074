@@ -6,5 +6,4 @@ Rails.application.routes.draw do
     resources :order, only: [:index, :create]
   end
 
-  
 end
