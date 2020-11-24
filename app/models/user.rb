@@ -11,7 +11,7 @@ class User < ApplicationRecord
     validates :last_name_kana, format:{ with:/\A[ァ-ヶー－]+\z/, message: "is invalid. Input full-width characters."}
     validates :first_name_kana, format:{ with:/\A[ァ-ヶー－]+\z/, message: "is invalid. Input full-width characters."}
     validates :birthdate
-    validates :password, format:{ with:/\A[a-zA-Z0-9]+\z/, message: "is invalid. Input full-width characters."}
+    validates :password, format:{ with:/\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i, message: "is invalid. Input full-width characters."}
   end
 
   has_many :items
