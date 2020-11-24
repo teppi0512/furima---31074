@@ -2,10 +2,9 @@ class OrderController < ApplicationController
   before_action :authenticate_user!, only: [:index]
   before_action :set_item,only: [:index, :create]
 
-
   def index
     @order = Order.new
-    if @item.user.id == current_user.id
+    if @item.user.id == current_user.id || @item.purchase !=nil
       redirect_to root_path
     end 
   end
@@ -26,7 +25,7 @@ class OrderController < ApplicationController
 
   private
   def order_params
-    params.require(:orders).permit(:postal_cord, :prefecture_id, :city, :addresses, :building, :phone_number).merge(user_id: current_user.id, item_id: params[:item_id], token: params[:token])
+    params.require(:order).permit(:postal_cord, :prefecture_id, :city, :addresses, :building, :phone_number).merge(user_id: current_user.id, item_id: params[:item_id], token: params[:token])
   end
 
   def set_item
@@ -41,6 +40,5 @@ class OrderController < ApplicationController
       currency: 'jpy'
     )
   end
-
 
 end
