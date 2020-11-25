@@ -7,7 +7,7 @@ class Item < ApplicationRecord
   validates :name
   validates :explain
   validates :prefecture_id, numericality: { other_than: 0 }
-  validates :price, format:{ with:/\A[0-9]+\z/, message: "is invalid. Input full-width characters."}, :numericality => { :less_than => 9999999, :greater_than => 300 }
+  validates :price, format:{ with:/\A[0-9]+\z/, message: "is invalid. Input full-width characters."}, :numericality => { :less_than => 9999999, :greater_than => 299 }
   validates :image
   end
 
